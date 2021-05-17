@@ -1,9 +1,17 @@
-package dfki.de;
+package dfki.de.sequences.accessions;
+
+import dfki.de.sequences.Accession;
+import dfki.de.sequences.Entity;
+import dfki.de.sequences.Types;
 
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Exctracts reference sequences
+ * https://www.ncbi.nlm.nih.gov/books/NBK21091/table/ch18.T.refseq_accession_numbers_and_mole/?report=objectonly/
+ */
 public class RefSeqExtractor {
 
     final private HashMap<Pattern, Accession> patterns;
@@ -26,7 +34,7 @@ public class RefSeqExtractor {
 
         patterns = new HashMap<>();
         for(Accession accession : accessions){
-            patterns.put(Pattern.compile(accession.getPrefix() +"_[0-9]+"), accession);
+            patterns.put(Pattern.compile(accession.getPrefix() +"_[0-9]+(?<version>\\.[1-9][0-9]*)?"), accession);
         }
     }
 

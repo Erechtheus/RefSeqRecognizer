@@ -1,4 +1,4 @@
-package dfki.de;
+package dfki.de.sequences;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
