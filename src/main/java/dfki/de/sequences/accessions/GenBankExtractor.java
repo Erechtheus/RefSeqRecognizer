@@ -39,7 +39,7 @@ public class GenBankExtractor {
             final Matcher matcher = pattern.matcher(text);
 
             while(matcher.find()){
-                matches.add(new Entity(matcher.start(), matcher.end(), new Accession("todo", new HashSet<>()))); //Accession has to be compiled
+                matches.add(new Entity(matcher.start(), matcher.end(), new Accession("todo", new HashSet<Types>()))); //Accession has to be compiled
             }
         }
 
