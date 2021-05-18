@@ -99,14 +99,14 @@ public class GenBankExtractor {
         patterns = new ArrayList<>();
 
         //Nucleotides
-        patterns.add(Pattern.compile(prefix +"(?<match>[A-Z]\\d{5}|[A-Z]{2}\\d{6}|[A-Z]{2}\\d{8})" +suffix)); //1 letter + 5 numerals or 2 letters + 6 numerals or 2 letters + 8 numerals
+        patterns.add(Pattern.compile(prefix +"(?<match>" +oneLetter +"\\d{5}|" +twoLetter +"\\d{6}|" +twoLetter +"\\d{8})" +suffix)); //1 letter + 5 numerals or 2 letters + 6 numerals or 2 letters + 8 numerals
 
         //proteins
-        patterns.add(Pattern.compile(prefix +"(?<match>[A-Z]{3}\\d{5}|[A-Z]{3}\\d{7})" +suffix)); //3 letters + 5 numerals or 3 letters + 7 numerals
+        patterns.add(Pattern.compile(prefix +"(?<match>" +threeLetter +"\\d{5}|" +threeLetter +"\\d{7})" +suffix)); //3 letters + 5 numerals or 3 letters + 7 numerals
 
         //WGS
-        patterns.add(Pattern.compile(prefix +"(?<match>[A-Z]{4}(\\d{2}|\\d{6,}))" +suffix)); //        4 letters + 2 numerals for WGS assembly version + 6 or more numerals or
-        patterns.add(Pattern.compile(prefix +"(?<match>[A-Z]{6}(\\d{2}|\\d{7,}))" +suffix)); //        6 letters + 2 numerals for WGS assembly version + 7 or more numerals
+        patterns.add(Pattern.compile(prefix +"(?<match>" +fourLetter +"(\\d{2}|\\d{6,}))" +suffix)); //        4 letters + 2 numerals for WGS assembly version + 6 or more numerals or
+        patterns.add(Pattern.compile(prefix +"(?<match>" +sixLetter  +"(\\d{2}|\\d{7,}))" +suffix)); //        6 letters + 2 numerals for WGS assembly version + 7 or more numerals
 
     }
 
